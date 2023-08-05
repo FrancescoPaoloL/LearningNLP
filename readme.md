@@ -1,15 +1,23 @@
 # Learning NLP
 
-WIP
+## Shallow parsing
+Shallow parsing, also known as chunking, is a technique in natural language processing to identify and group specific phrases (like noun phrases or verb phrases) within a sentence.
+In order to show how it works, ee've made a script that takes an input sentence, performs shallow parsing using the NLTK library, and then displays the parsed tree to show how different parts of the sentence are grouped together based on the specified grammar rules in the configuration file.
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+### [WIP]
 
 ## Languages and Tools
-<p align="left"> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+<p align="left"> 
+<a href="https://www.nltk.org/" target="_blank" rel="noreferrer"> <img src="./img/python_nltk.png" alt="python" width="50" height="50"/> </a> 
+<a href="https://pyyaml.org/" target="_blank" rel="noreferrer"> <img src="./img/pyyaml.png" alt="python" width="110" height="50"/> </a> 
+</p>
 
 ## Requirements
 ```
-Just Python 3.6.9
+nltk==3.6.3
+PyYAML==6.0.1
+wip
 ```
 
 ## Test Coverage
