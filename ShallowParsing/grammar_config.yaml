@@ -1,0 +1,14 @@
+grammar: |
+  NP: {<DT>?<JJ>*<NN>|<PRP>|<PRP$>} # Noun Phrase
+  VP: {<VB.*><AdjP|AdvP|RelCl>*} # Verb Phrase
+  PP: {<IN><NP>} # Prepositional Phrase
+  AdjP: {<RB.*>?<JJ.*>} # Adjective Phrase
+  AdvP: {<RB.*>} # Adverb Phrase
+  DP: {<DT><JJ>*<NN>} # Determiner Phrase
+  ConjP: {<CC>} # Conjunction Phrase
+  IntP: {<WRB><VP>*} # Interrogative Phrase
+  ExclP: {<UH>} # Exclamatory Phrase
+  InfP: {<TO><VP>} # Infinitive Phrase
+  GerP: {<VBG><NP|PP|DP|AdjP|AdvP|PartP|RelCl>*} # Gerund Phrase
+  PartP: {<VBN><NP|PP|DP|AdjP|AdvP|GerP|RelCl>*} # Participle Phrase
+  RelCl: {<WP.*><VP>} # Relative Clause
