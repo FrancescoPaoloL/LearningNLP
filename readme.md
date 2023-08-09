@@ -9,14 +9,18 @@ In order to show how it works, ee've made a script that takes an input sentence,
 ## Languages and Tools
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 <p align="left"> 
-<a href="https://www.nltk.org/" target="_blank" rel="noreferrer"> <img src="./img/python_nltk.png" alt="python" width="50" height="50"/> </a> 
-<a href="https://pyyaml.org/" target="_blank" rel="noreferrer"> <img src="./img/pyyaml.png" alt="python" width="110" height="50"/> </a> 
+<a href="https://www.nltk.org/" target="_blank" rel="noreferrer"> <img src="./src/img/python_nltk.png" alt="python" width="50" height="50"/> </a> 
+<a href="https://pyyaml.org/" target="_blank" rel="noreferrer"> <img src="./src/img/pyyaml.png" alt="python" width="110" height="50"/> </a> 
 </p>
 
 ## Requirements
 ```
+CairoSVG==2.5.2
 nltk==3.6.3
+Pillow==10.0.0
 PyYAML==6.0.1
+spacy==3.3.0
+stanza==1.5.0
 wip
 ```
 
