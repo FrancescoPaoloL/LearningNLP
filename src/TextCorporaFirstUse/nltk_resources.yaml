@@ -1,0 +1,15 @@
+- resource_path: tokenizers/punkt
+  resource_name: punkt
+  description: NLTK tokenizer data
+
+- resource_path: chunkers/maxent_ne_chunker
+  resource_name: maxent_ne_chunker
+  description: NLTK named entity chunker data
+
+- resource_path: corpora/words
+  resource_name: words
+  description: NLTK words corpus data
+
+- resource_path: taggers/averaged_perceptron_tagger
+  resource_name: averaged_perceptron_tagger
+  description: NLTK POS tagger data
