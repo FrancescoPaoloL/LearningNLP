@@ -2,9 +2,15 @@
 
 ## Shallow parsing
 Shallow parsing, also known as chunking, is a technique in natural language processing to identify and group specific phrases (like noun phrases or verb phrases) within a sentence.
-In order to show how it works, ee've made a script that takes an input sentence, performs shallow parsing using the NLTK library, and then displays the parsed tree to show how different parts of the sentence are grouped together based on the specified grammar rules in the configuration file.
+In order to show how it works, I've made a script that takes an English sentence as input, performs shallow parsing using the NLTK library, and then displays the parsed tree to show how different parts of the sentence are grouped together based on the specified grammar rules in the configuration file.
 
-### todo...
+## Dependency Grammar
+Dependency grammar is a linguistic method that emphasizes the connections between words in a sentence, showing how each word relates to others by depicting these relationships in a tree-like structure. It helps us grasp how words work together to convey meaning within a sentence.
+In order to show how it works, I've made a script that takes an English sentence as input, loads a language model, creates a visual representation of how words in the sentence relate to each other (the dependency tree), and displays this tree as an image.
+
+## Costituency Grammar
+Constituency grammar is a linguistic approach that helps us understand how sentences are structured by identifying the different parts and phrases that make them up, allowing for a deeper analysis of their organization and meaning.
+In order to show how it works, I've made a script that takes an English sentence as input, processes it with NLP techniques such as tokenization, POS tagging, and constituency parsing using the stanza library, and then displays the syntactic structure of the input sentence using constituency parsing.
 
 ## Text Corpora using
 This Python project demonstrates a very simple text corpus analysis using the Natural Language Toolkit (NLTK) library. To achieve this, we've implemented basic functionalities on downloading essential NLTK resources, extracting the first 20 words from Blake's poems in the Gutenberg corpus, tokenizing the text, performing Part-of-Speech (POS) tagging, and conducting named-entity chunking.
