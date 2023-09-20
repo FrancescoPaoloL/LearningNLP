@@ -1,5 +1,5 @@
 import tkinter as tk
-from PIL import Image, ImageTk
+from PIL import ImageTk
 from generate_image import resize_image
 
 def display_dependency_tree_image(png_data, initial_width=800, initial_height=600):

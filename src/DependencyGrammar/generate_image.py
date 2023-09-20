@@ -1,7 +1,7 @@
 from spacy import displacy
 import cairosvg
 from io import BytesIO
-from PIL import Image  # Add this import statement
+from PIL import Image
 
 def generate_dependency_tree_image(nlp, sentence):
     doc = nlp(sentence)
