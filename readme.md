@@ -21,10 +21,11 @@ Specifically, we rely on the following NLTK components:
 - <b>Corpora/words</b>: In NLTK, this refers to a collection of words in the English language.
 - <b>Pos_tag</b>: This NLTK tool is used to automatically tag words in a text with their respective parts of speech.
 
+## Text Wrangling
+Text wrangling is the process of cleaning your data to make it readable by your program. To demonstrate how it works, I have created a script that demonstrates, in a simple manner, how to fix spelling errors in a given text. It accomplishes this by generating potential corrections for each misspelled word and selecting the most probable correction based on word frequencies. The code then tokenizes the input text into words, corrects each word, and ultimately displays the corrected text."
+
+
 ### [WIP]
-
-
-
 
 
 ## Languages and Tools
@@ -38,7 +39,7 @@ Specifically, we rely on the following NLTK components:
 ```
 CairoSVG==2.5.2
 nltk==3.6.3
-Pillow==10.0.0
+Pillow==10.0.1
 PyYAML==6.0.1
 spacy==3.3.0
 stanza==1.5.0
