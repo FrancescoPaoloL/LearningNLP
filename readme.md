@@ -52,9 +52,11 @@ Feature engineering in NLP typically includes the following key steps:
     - <b><i>N-grams</i></b>: Capturing sequences of N words to consider local context.
     - <b><i>Term Frequency-Inverse Document Frequency (TF-IDF)</i></b>: Assigning weights to words based on their importance in a document relative to a corpus of documents.
         - We even have a specific example when we use TF-IDF vectorization.
+    - <b><i>Documents Similarity</i></b>: document distance in NLP refers to quantifying how similar or dissimilar two or more text documents are. A very common metrics include cosine similarity, so I've done a script which calculates and compares cosine similarity between three pairs of matrices. It does this using both a library version and a custom "from scratch" version of the cosine similarity calculation function. 
     - TODO
 
 In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
+
 
 
 ### [WIP]
