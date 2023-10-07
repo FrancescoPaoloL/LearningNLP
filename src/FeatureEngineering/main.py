@@ -12,6 +12,7 @@ from data_preprocessing import load_and_preprocess_data, text_preprocessing
 from Traditional_FE_Models.bagOfWords import get_bag_of_words
 from Traditional_FE_Models.bagOfNgrams import get_bag_of_ngrams
 from Traditional_FE_Models.tfidf import get_tfidf_CountVectorizer, get_tfidf_TfidfVectorizer
+from Traditional_FE_Models.tfidfExtratingNewFeatures import generate_tfidf_matrix
 
 
 # Define 'corpus' and its associated labels
@@ -62,3 +63,12 @@ print(tfidf_df_old)
 tfidf_df_new = get_tfidf_TfidfVectorizer(norm_corpus)
 print("\nTF-IDF Model (Using TfidfVectorizer, in practice, yields the same result.):")
 print(tfidf_df_new)
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# extracting features for new documents
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tfidf_matrix = generate_tfidf_matrix(corpus)
+
+print("Extracting new features into TF-IDF Matrix:")
+print(tfidf_matrix)
