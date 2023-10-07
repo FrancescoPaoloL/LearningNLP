@@ -43,11 +43,27 @@ This algorithm The Porter is available in the Natural Language Toolkit (NLTK),
 Like the Porter Stemmer, the Snowball Stemmer is used to reduce words to their base or root form, particularly in the English language. 
 It's designed to be more accurate and efficient than the original Porter Stemmer while still being relatively simple and effective.
 
+## Feature enginering
+Feature engineering in NLP involves the process of transforming and creating meaningful features from raw text data to improve the performance of machine learning models. This is essential because many machine learning algorithms require numerical input data, while NLP tasks often involve working with unstructured text data. 
+Feature engineering in NLP typically includes the following key steps:
+- <b>Text Preprocessing</b>: This step involves cleaning and preparing the raw text data.
+- <b>Feature Extraction</b>: In NLP, feature extraction involves converting text data into numerical features that can be used by machine learning algorithms. Common techniques for feature extraction include:</b>
+    - <b><i>Bag of Words (BoW)</i></b>: Representing text as a matrix of word frequencies or presence/absence indicators.
+    - <b><i>N-grams</i></b>: Capturing sequences of N words to consider local context.
+    - <b><i>Term Frequency-Inverse Document Frequency (TF-IDF)</i></b>: Assigning weights to words based on their importance in a document relative to a corpus of documents.
+    - TODO
+
+In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
+
+
 ### [WIP]
 
 
 ## Languages and Tools
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 <p align="left"> 
 <a href="https://www.nltk.org/" target="_blank" rel="noreferrer"> <img src="./src/img/python_nltk.png" alt="python" width="50" height="50"/> </a> 
 <a href="https://pyyaml.org/" target="_blank" rel="noreferrer"> <img src="./src/img/pyyaml.png" alt="python" width="110" height="50"/> </a> 
@@ -57,8 +73,11 @@ It's designed to be more accurate and efficient than the original Porter Stemmer
 ```
 CairoSVG==2.5.2
 nltk==3.6.3
+numpy==1.13.3
+pandas==1.1.5
 Pillow==10.0.1
 PyYAML==6.0.1
+scikit_learn==1.3.1
 spacy==3.3.0
 stanza==1.5.0
 wip
