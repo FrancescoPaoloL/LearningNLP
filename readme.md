@@ -51,6 +51,7 @@ Feature engineering in NLP typically includes the following key steps:
     - <b><i>Bag of Words (BoW)</i></b>: Representing text as a matrix of word frequencies or presence/absence indicators.
     - <b><i>N-grams</i></b>: Capturing sequences of N words to consider local context.
     - <b><i>Term Frequency-Inverse Document Frequency (TF-IDF)</i></b>: Assigning weights to words based on their importance in a document relative to a corpus of documents.
+        - We even have a specific example when we use TF-IDF vectorization.
     - TODO
 
 In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
