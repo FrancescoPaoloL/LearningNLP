@@ -2,8 +2,12 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-def calculate_cosine_similarity(matrix1, matrix2):
-    similarity_matrix = cosine_similarity(matrix1, matrix2)
+def calculate_cosine_similarity(matrix1, matrix2=None):
+    if matrix2 is None:
+        similarity_matrix = cosine_similarity(matrix1)
+    else:
+        similarity_matrix = cosine_similarity(matrix1, matrix2)
+    
     similarity_df = pd.DataFrame(similarity_matrix)
     return similarity_df
 
