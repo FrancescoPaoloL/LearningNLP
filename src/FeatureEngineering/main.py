@@ -15,6 +15,8 @@ from Traditional_FE_Models.tfidf import get_tfidf_CountVectorizer, get_tfidf_Tfi
 from Traditional_FE_Models.tfidfVectorization import generate_tfidf_matrix
 import numpy as np
 from Traditional_FE_Models.cosineSimilarity import *
+from Traditional_FE_Models.documentClustering import *
+
 
 def main():
     # Define 'corpus' and its associated labels
@@ -139,6 +141,10 @@ def main():
         print(f"\nAverage Cosine Similarity: {average_similarity}")
         print(f"\nCosine Similarity (from scratch version): {similarity_v2}\n\n")
 
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # documents clustering in dendrogram
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    plot_dendrogram(corpus[:4])
 
 if __name__ == "__main__":
     main()
