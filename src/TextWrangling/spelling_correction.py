@@ -1,6 +1,5 @@
 import re
 import nltk
-from nltk.corpus import wordnet
 
 # WordNet is just another NLTK corpus reader
 nltk.download('wordnet')
