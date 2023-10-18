@@ -57,7 +57,7 @@ def main():
   
     while True:
         print_menu(corpus, labels, matrices)
-        choice = input("Enter your choice (0-5): ")
+        choice = input("Enter your choice (0-6): ")
         print(f"You've chosen {choice}\n")
 
         if choice == "0":
@@ -76,6 +76,9 @@ def main():
             pass
         elif choice == "5":
             LDA_algorithm(corpus, labels)
+            pass
+        elif choice == "6":
+            word2vec_example(corpus)
             pass
         else:
             print("Invalid choice. Please select a valid option.")

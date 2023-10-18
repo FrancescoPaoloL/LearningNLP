@@ -9,6 +9,8 @@ from Traditional_FE_Models.cosineSimilarity import *
 from Traditional_FE_Models.documentClustering import *
 from Traditional_FE_Models.LDA import *
 
+from Advanced_FE_Models.word2vec import *
+
 def clearScreen():
     if platform.system() == 'Windows':
         os.system('cls')
@@ -18,16 +20,21 @@ def clearScreen():
 def print_menu(corpus, labels, matrices):
     clearScreen()
     print("Choose an option:")
+    print("TRADITIONAL FEATURE ENGINEERING MODELS")
     print("1. Basic feature engineer" \
               "\tLoad and preprocess data\n" \
               "\tBag of Words Model (sparse matrix)\n" \
               "\tBag of N-Grams Model\n" \
               "\tTF-IDF Model (Using CountVectorized)\n" \
               "\tTF-IDF Model (Using TfidfVectorizer)\n")
-    print("2. Extract new features into TF-IDF Matrix\n")
-    print("3. Calculate Cosine Similarity\n")
-    print("4. Plot Dendrogram\n")
+    print("2. Extract new features into TF-IDF Matrix")
+    print("3. Calculate Cosine Similarity")
+    print("4. Plot Dendrogram")
     print("5. LDA\n")
+    print("ADVANCED FEATURE ENGINEERING MODELS")
+    print("6. Word2Vec example\n")
+    #...
+    print("------------------------------------")
     print("0. Exit\n")
 
 def bags(corpus, labels):
@@ -124,4 +131,8 @@ def LDA_algorithm(corpus, labels):
     results = lda_topic_modeling(corpus, labels)
     print("LDA Topic Distribution for Each Document:")
     print(results)
+    input("Press Enter to continue...")
+
+def word2vec_example(corpus):
+    word2vec_operations(corpus)
     input("Press Enter to continue...")
