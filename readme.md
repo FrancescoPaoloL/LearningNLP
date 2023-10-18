@@ -53,9 +53,11 @@ Feature engineering in NLP typically includes the following key steps:
     - <b><i>Term Frequency-Inverse Document Frequency (TF-IDF)</i></b>: Assigning weights to words based on their importance in a document relative to a corpus of documents.
         - We even have a specific example when we use TF-IDF vectorization.
     - <b><i>Documents Similarity</i></b>: document distance in NLP refers to quantifying how similar or dissimilar two or more text documents are. A very common metrics include cosine similarity, so I've done a script which calculates and compares cosine similarity between three pairs of matrices. It does this using both a library version and a custom "from scratch" version of the cosine similarity calculation function. 
+    - <b>Document Clustering</b>: document clustering is a text analysis technique that groups similar documents together based on their content. This process makes it easier to identify patterns and themes within a large set of documents. To illustrate how this works, I've created a script that performs hierarchical clustering on a collection of documents. It begins by measuring the similarity between the documents using their TF-IDF representations. Then, it constructs a hierarchical tree structure (dendrogram) to visualize how the documents are grouped based on their similarity. For the sake of simplicity, I've used only four sentences as documents.
+    - <b>Topic Models</b>: they are statistical models used to discover hidden thematic structures within a collection of documents. They enable the identification and analysis of common topics or themes. As an example, I've chosen the Latent Dirichlet Allocation (LDA) algorithm and implemented a script that performs topic modeling on the text data. This script returns a Pandas DataFrame containing the topic distribution for each document in the corpus.
     - TODO
 
-In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
+    In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
 
 
 
