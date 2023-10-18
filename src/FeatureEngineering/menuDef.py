@@ -7,6 +7,7 @@ from Traditional_FE_Models.tfidf import get_tfidf_CountVectorizer, get_tfidf_Tfi
 from Traditional_FE_Models.tfidfVectorization import generate_tfidf_matrix
 from Traditional_FE_Models.cosineSimilarity import *
 from Traditional_FE_Models.documentClustering import *
+from Traditional_FE_Models.LDA import *
 
 def clearScreen():
     if platform.system() == 'Windows':
@@ -23,10 +24,11 @@ def print_menu(corpus, labels, matrices):
               "\tBag of N-Grams Model\n" \
               "\tTF-IDF Model (Using CountVectorized)\n" \
               "\tTF-IDF Model (Using TfidfVectorizer)\n")
-    print("2. Extract new features into TF-IDF Matrix")
-    print("3. Calculate Cosine Similarity")
-    print("4. Plot Dendrogram")
-    print("0. Exit")
+    print("2. Extract new features into TF-IDF Matrix\n")
+    print("3. Calculate Cosine Similarity\n")
+    print("4. Plot Dendrogram\n")
+    print("5. LDA\n")
+    print("0. Exit\n")
 
 def bags(corpus, labels):
     #~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,4 +118,10 @@ def documents_clustering(corpus):
     # documents clustering in dendrogram
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     plot_dendrogram(corpus)
+    input("Press Enter to continue...")
+
+def LDA_algorithm(corpus, labels):
+    results = lda_topic_modeling(corpus, labels)
+    print("LDA Topic Distribution for Each Document:")
+    print(results)
     input("Press Enter to continue...")

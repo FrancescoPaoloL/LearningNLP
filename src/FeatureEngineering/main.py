@@ -57,7 +57,7 @@ def main():
   
     while True:
         print_menu(corpus, labels, matrices)
-        choice = input("Enter your choice (0-4): ")
+        choice = input("Enter your choice (0-5): ")
         print(f"You've chosen {choice}\n")
 
         if choice == "0":
@@ -73,6 +73,9 @@ def main():
             pass
         elif choice == "4":
             documents_clustering(corpus[:4])
+            pass
+        elif choice == "5":
+            LDA_algorithm(corpus, labels)
             pass
         else:
             print("Invalid choice. Please select a valid option.")
