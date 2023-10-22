@@ -8,8 +8,12 @@ from Traditional_FE_Models.tfidfVectorization import generate_tfidf_matrix
 from Traditional_FE_Models.cosineSimilarity import *
 from Traditional_FE_Models.documentClustering import *
 from Traditional_FE_Models.LDA import *
+import numpy as np
 
 from Advanced_FE_Models.word2vec import *
+from Advanced_FE_Models.word_embeddings import *
+from Advanced_FE_Models.text_processing import *
+
 
 def clearScreen():
     if platform.system() == 'Windows':
@@ -32,7 +36,8 @@ def print_menu(corpus, labels, matrices):
     print("4. Plot Dendrogram")
     print("5. LDA\n")
     print("ADVANCED FEATURE ENGINEERING MODELS")
-    print("6. Word2Vec example\n")
+    print("6. Word2Vec example")
+    print("7. CBOW example\n")
     #...
     print("------------------------------------")
     print("0. Exit\n")
@@ -128,11 +133,42 @@ def documents_clustering(corpus):
     input("Press Enter to continue...")
 
 def LDA_algorithm(corpus, labels):
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # LDA example
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     results = lda_topic_modeling(corpus, labels)
     print("LDA Topic Distribution for Each Document:")
     print(results)
     input("Press Enter to continue...")
 
 def word2vec_example(corpus):
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Word2Vec example
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     word2vec_operations(corpus)
+    input("Press Enter to continue...")
+
+def CBOW_example():
+    words, tokenizer = tokenize_and_preprocess_text()
+    X, Y = generate_cbow_data(words, tokenizer)
+
+    i = 0
+    for context_index, target_index in zip(X, Y):
+        context_word = tokenizer.index_word[context_index]
+        target_word = tokenizer.index_word[target_index]
+
+        print('Context (X):', context_word, '-> Target (Y):', target_word)
+
+        if i == 15:
+            break
+        i += 1
+
+    model = train_model(X, Y, tokenizer.word_index)
+
+    # The word embeddings are learned as a result of training this model. 
+    # You can obtain these embeddings using the get_word_embeddings function, 
+    # which extracts the weights of the Embedding layer
+    word_embeddings = get_word_embeddings(model)
+
+    print(word_embeddings)
     input("Press Enter to continue...")
