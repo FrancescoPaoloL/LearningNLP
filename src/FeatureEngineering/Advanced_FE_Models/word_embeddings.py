@@ -26,7 +26,22 @@ def generate_cbow_data(corpus, tokenizer, window_size=2):
 
     return np.array(X), np.array(Y)
 
-def train_model(X, Y, word_index):
+def generate_skipgram_data(corpus, tokenizer, window_size=2):
+    X = []  # Context words
+    Y = []  # Target words
+
+    for i, target_word in enumerate(corpus):
+        start = max(0, i - window_size)
+        stop = min(i + window_size + 1, len(corpus))
+
+        for j in range(start, stop):
+            if i != j:
+                X.append(tokenizer.word_index[corpus[j]])
+                Y.append(tokenizer.word_index[target_word])
+
+    return np.array(X), np.array(Y)
+
+def train_cbow_model(X, Y, word_index):
     # Older papers in NLP used 300 conventionally
     # https://petuum.medium.com/embeddings-a-matrix-of-meaning-4de877c9aa27. 
     # More recent papers used 512, 768, 1024.
@@ -56,6 +71,33 @@ def train_model(X, Y, word_index):
 
     return model
 
+def train_skipgram_model(X, Y, word_index):
+    # see what've written about train_cbow_model
+    embedding_dim = 300
+    vocabulary_size = len(word_index) + 1  # Add 1 for the special padding token (if used).
+
+    # see what've written about train_cbow_model
+    model = Sequential()
+    model.add(Embedding(input_dim=vocabulary_size, output_dim=embedding_dim, input_length=1))
+    model.add(Lambda(lambda x: x[0], output_shape=(embedding_dim)))
+    model.add(Dense(units=vocabulary_size, activation='softmax'))  # Output shape matches vocabulary size.
+    model.compile(loss='categorical_crossentropy', optimizer='adam')
+    print(model.summary())
+
+    # Convert Y to one-hot encoding manually
+    # beacuse Keras, in this specific case, doesn't 
+    # provide a built-in utility function for one-hot encoding.
+    # Remember that Skip-Gram requires one-hot encoding for efficient learning of multiple context 
+    # words, while CBOW does not need this encoding because it predicts a single target word.
+    Y_one_hot = np.zeros((len(Y), vocabulary_size))
+    Y_one_hot[np.arange(len(Y)), Y] = 1
+
+    # we set batch_size=1 because memory availabilty
+    # problem in my computer :(
+    model.fit(X, Y_one_hot, epochs=10, batch_size=1) 
+
+    return model
+
 def get_word_embeddings(model):
     # In the model we have three layers:
     #   - Embedding Layer aka model.layers[0]
@@ -63,3 +105,4 @@ def get_word_embeddings(model):
     #   - Dense Layer ak model.layers[2]
     word_embeddings = model.layers[0].get_weights()[0]
     return word_embeddings
+

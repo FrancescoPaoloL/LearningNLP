@@ -57,7 +57,7 @@ def main():
   
     while True:
         print_menu(corpus, labels, matrices)
-        choice = input("Enter your choice (0-7): ")
+        choice = input("Enter your choice (0-8): ")
         print(f"You've chosen {choice}\n")
 
         if choice == "0":
@@ -83,7 +83,9 @@ def main():
         elif choice == "7":
             CBOW_example()
             pass
-        
+        elif choice == "8":
+            SkipGram_example()
+            pass
         else:
             print("Invalid choice. Please select a valid option.")
 

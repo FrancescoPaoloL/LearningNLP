@@ -37,7 +37,8 @@ def print_menu(corpus, labels, matrices):
     print("5. LDA\n")
     print("ADVANCED FEATURE ENGINEERING MODELS")
     print("6. Word2Vec example")
-    print("7. CBOW example\n")
+    print("7. CBOW example")
+    print("8. Skip-Gram example\n")
     #...
     print("------------------------------------")
     print("0. Exit\n")
@@ -163,11 +164,35 @@ def CBOW_example():
             break
         i += 1
 
-    model = train_model(X, Y, tokenizer.word_index)
+    model = train_cbow_model(X, Y, tokenizer.word_index)
 
     # The word embeddings are learned as a result of training this model. 
     # You can obtain these embeddings using the get_word_embeddings function, 
     # which extracts the weights of the Embedding layer
+    word_embeddings = get_word_embeddings(model)
+
+    print(word_embeddings)
+    input("Press Enter to continue...")
+
+
+
+def SkipGram_example():
+    words, tokenizer = tokenize_and_preprocess_text()
+    X, Y = generate_skipgram_data(words, tokenizer)
+
+    i = 0
+    for target_index, context_index in zip(X, Y):
+        target_word = tokenizer.index_word[target_index]
+        context_word = tokenizer.index_word[context_index]
+
+        print('Target (X):', target_word, '-> Context (Y):', context_word)
+
+        if i == 15:
+            break
+        i += 1
+
+    model = train_skipgram_model(X, Y, tokenizer.word_index)
+
     word_embeddings = get_word_embeddings(model)
 
     print(word_embeddings)
