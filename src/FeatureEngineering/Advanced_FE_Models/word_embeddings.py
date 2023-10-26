@@ -1,6 +1,7 @@
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Embedding, Dense, Lambda
+from gensim.models import Word2Vec
 
 def generate_cbow_data(corpus, tokenizer, window_size=2):
     # we've chosen window_size = 1 as default
@@ -97,6 +98,24 @@ def train_skipgram_model(X, Y, word_index):
     model.fit(X, Y_one_hot, epochs=10, batch_size=1) 
 
     return model
+
+
+def train_gensim_word2vec(sentences, vector_size=300, window=2, sg=0, min_count=1):
+    # see what've written about train_cbow_model for vector_size
+    # The other default settings consist of specific hyperparameter values 
+    # found after a few testing
+    model = Word2Vec(sentences, vector_size=vector_size, window=window, sg=sg, min_count=min_count)
+    model.train(sentences, total_examples=model.corpus_count, epochs=10)
+    return model
+
+
+def get_gensim_word_embeddings(model):
+    # in Gensim's Word2Vec model, wv stands for "word vectors.
+    # It's an attribute which provides access to the word vectors 
+    # (aka word embeddings) that have been learned during the 
+    # training process.
+    word_vectors = model.wv
+    return word_vectors
 
 def get_word_embeddings(model):
     # In the model we have three layers:
