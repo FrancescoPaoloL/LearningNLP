@@ -58,8 +58,9 @@ Feature engineering in NLP typically includes the following key steps:
         - <b><i>Topic Models</i></b>: they are statistical models used to discover hidden thematic structures within a collection of documents. They enable the identification and analysis of common topics or themes. As an example, I've chosen the Latent Dirichlet Allocation (LDA) algorithm and implemented a script that performs topic modeling on the text data. This script returns a Pandas DataFrame containing the topic distribution for each document in the corpus.
     - <b><i>ADVANCED FEATURES ENGINEERING MODELS</i></b>
         - <b><i>Word2vec</i></b>: This technique transforms words into numerical vectors, enabling computers to comprehend and process them effectively; it is an integral part of the vector space model, representing words as vectors in a manner where similar words are positioned close in this space, in order to make the original text undestable by the computer. To show how this works I've create a script that uses the Gensim library to train a Word2Vec model on a given corpus of text; then finding the vector representation of the word 'sun' (for example) and identifying the top 3 words most similar to 'sun' based on the learned word embeddings.
-        - <b><i>CBOW (Continuous Bag of Words) model</i></b>: it is a word embedding model that learns to predict a word from its context words in a sentence, creating word vectors that represent words' meanings and relationships. To provide a simple example, I've developed a script that tokenizes and preprocesses Shakespeare's "Hamlet," generates training data for a Skip-Gram embedding model, trains the model, subsequently extracts word embeddings to predict the context words given a target word.
-        - <b><i>Skip-Gram model</i></b>: it is a technique that helps us grasp the meanings of words and their relationships by analyzing the context in which they appear within a substantial body of text. In simpler terms, it enables us to capture the semantic connections between words. To illustrate, I've developed a script that performs tasks akin to the CBOW example. However, in this case, it extracts word embeddings to predict the target word based on its context words.
+        - <b><i>CBOW (Continuous Bag of Words)</i></b>: it is a word embedding model that learns to predict a word from its context words in a sentence, creating word vectors that represent words' meanings and relationships. To provide a simple example, I've developed a script that tokenizes and preprocesses Shakespeare's "Hamlet," generates training data for a Skip-Gram embedding model, trains the model, subsequently extracts word embeddings to predict the context words given a target word.
+        - <b><i>Skip-Gram</i></b>: it is a technique that helps us grasp the meanings of words and their relationships by analyzing the context in which they appear within a substantial body of text. In simpler terms, it enables us to capture the semantic connections between words. To illustrate, I've developed a script that performs tasks akin to the CBOW example. However, in this case, it extracts word embeddings to predict the target word based on its context words.
+        - <b><i>Gensim</i></b>: it is a efficent implementation of the Word2Vec model. It's widely used for tasks like text document similarity, topic extraction, and word vector representations. To illustrate, I've developed a script that training a Gensim Word2Vec model on a text corpus, extracting word embeddings, and finding similar words to a specified target word, with adjustable model parameters.
         - TODO
 
     In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
@@ -89,7 +90,7 @@ numpy==1.13.3
 pandas==1.1.5
 Pillow==10.1.0
 PyYAML==6.0.1
-scikit_learn==1.3.1
+scikit_learn==1.3.2
 scipy==1.5.4
 spacy==3.3.0
 stanza==1.5.0
