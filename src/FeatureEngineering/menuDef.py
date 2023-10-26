@@ -177,6 +177,9 @@ def CBOW_example():
 
 
 def SkipGram_example():
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # SkipGram example
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     words, tokenizer = tokenize_and_preprocess_text()
     X, Y = generate_skipgram_data(words, tokenizer)
 
@@ -200,6 +203,9 @@ def SkipGram_example():
 
 
 def Gensim_example(vector_size=100, window=5, sg=0, min_count=5):
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Gensim example
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     words, tokenizer = tokenize_and_preprocess_text()
 
     print(f"Total words in corpus: {len(words)}")
