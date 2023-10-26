@@ -39,6 +39,7 @@ def print_menu(corpus, labels, matrices):
     print("6. Word2Vec example")
     print("7. CBOW example")
     print("8. Skip-Gram example\n")
+    print("9. Gensim example\n")
     #...
     print("------------------------------------")
     print("0. Exit\n")
@@ -175,7 +176,6 @@ def CBOW_example():
     input("Press Enter to continue...")
 
 
-
 def SkipGram_example():
     words, tokenizer = tokenize_and_preprocess_text()
     X, Y = generate_skipgram_data(words, tokenizer)
@@ -196,4 +196,22 @@ def SkipGram_example():
     word_embeddings = get_word_embeddings(model)
 
     print(word_embeddings)
+    input("Press Enter to continue...")
+
+
+def Gensim_example(vector_size=100, window=5, sg=0, min_count=5):
+    words, tokenizer = tokenize_and_preprocess_text()
+
+    print(f"Total words in corpus: {len(words)}")
+    print(f"Sample of tokenized words: {words[:10]}")
+
+    word2vec_model = train_gensim_word2vec([words], vector_size=vector_size, window=window, sg=sg, min_count=min_count)
+    word_embeddings = get_gensim_word_embeddings(word2vec_model)
+
+    # Find similar words to a given word
+    target_word = "king"
+    similar_words = word_embeddings.most_similar(target_word, topn=5)
+    print(f"Words similar to '{target_word}':")
+    for word, similarity in similar_words:
+        print(f"{word}: {similarity:.2f}")
     input("Press Enter to continue...")

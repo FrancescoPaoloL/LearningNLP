@@ -57,7 +57,7 @@ def main():
   
     while True:
         print_menu(corpus, labels, matrices)
-        choice = input("Enter your choice (0-8): ")
+        choice = input("Enter your choice (0-9): ")
         print(f"You've chosen {choice}\n")
 
         if choice == "0":
@@ -85,6 +85,9 @@ def main():
             pass
         elif choice == "8":
             SkipGram_example()
+            pass
+        elif choice == "9":
+            Gensim_example(vector_size=300, window=10, sg=1, min_count=10) 
             pass
         else:
             print("Invalid choice. Please select a valid option.")
