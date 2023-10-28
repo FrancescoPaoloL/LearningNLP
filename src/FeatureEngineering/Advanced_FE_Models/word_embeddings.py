@@ -61,11 +61,11 @@ def train_cbow_model(X, Y, word_index):
     model.add(Lambda(lambda x: x[0], output_shape=(embedding_dim)))
 
     # This adds a layer that produces a probability distribution via softmax algorithm
-    model.add(Dense(units=embedding_dim, activation='softmax'))
+    model.add(Dense(units=embedding_dim, activation="softmax"))
 
     # we use the "mean squared error," which means it calculates the average of 
     # the squared differences between predictions and correct values via Adams optimizer
-    model.compile(loss='mean_squared_error', optimizer='adam')
+    model.compile(loss="mean_squared_error", optimizer="adam")
     print(model.summary())
 
     model.fit(X, Y, epochs=10, batch_size=32)
@@ -81,8 +81,8 @@ def train_skipgram_model(X, Y, word_index):
     model = Sequential()
     model.add(Embedding(input_dim=vocabulary_size, output_dim=embedding_dim, input_length=1))
     model.add(Lambda(lambda x: x[0], output_shape=(embedding_dim)))
-    model.add(Dense(units=vocabulary_size, activation='softmax'))  # Output shape matches vocabulary size.
-    model.compile(loss='categorical_crossentropy', optimizer='adam')
+    model.add(Dense(units=vocabulary_size, activation="softmax"))  # Output shape matches vocabulary size.
+    model.compile(loss="categorical_crossentropy", optimizer="adam")
     print(model.summary())
 
     # Convert Y to one-hot encoding manually
@@ -116,6 +116,33 @@ def get_gensim_word_embeddings(model):
     # training process.
     word_vectors = model.wv
     return word_vectors
+
+
+from keras.initializers import Constant
+
+def train_custom_word_embeddings(X, Y, word_index, embedding_dim, num_epochs):
+    num_words = len(word_index) + 1
+
+    model = Sequential()
+
+    # Create custom embeddings
+    model.add(Embedding(
+        input_dim=num_words,
+        output_dim=embedding_dim,
+        input_length=1,
+        trainable=True  # Set to True to train custom embeddings from scratch.
+    ))
+
+    model.add(Lambda(lambda x: x[0], output_shape=(embedding_dim)))
+    model.add(Dense(units=embedding_dim, activation="softmax"))
+
+    model.compile(loss="mean_squared_error", optimizer="adam")
+    print(model.summary())
+
+    model.fit(X, Y, epochs=num_epochs, batch_size=32)
+
+    return model
+
 
 def get_word_embeddings(model):
     # In the model we have three layers:
