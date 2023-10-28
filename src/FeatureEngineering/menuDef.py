@@ -13,6 +13,7 @@ import numpy as np
 from Advanced_FE_Models.word2vec import *
 from Advanced_FE_Models.word_embeddings import *
 from Advanced_FE_Models.text_processing import *
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 def clearScreen():
@@ -38,8 +39,9 @@ def print_menu(corpus, labels, matrices):
     print("ADVANCED FEATURE ENGINEERING MODELS")
     print("6. Word2Vec example")
     print("7. CBOW example")
-    print("8. Skip-Gram example\n")
-    print("9. Gensim example\n")
+    print("8. Skip-Gram example")
+    print("9. Gensim example")
+    print("10. Glove example\n")
     #...
     print("------------------------------------")
     print("0. Exit\n")
@@ -220,4 +222,56 @@ def Gensim_example(vector_size=100, window=5, sg=0, min_count=5):
     print(f"Words similar to '{target_word}':")
     for word, similarity in similar_words:
         print(f"{word}: {similarity:.2f}")
+    input("Press Enter to continue...")
+
+
+def Glove_example():
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Glove example
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    words, tokenizer = tokenize_and_preprocess_text()
+
+    # we use CBOW with GloVe because:
+    #   - CBOW focuses on nearby words for word meanings, while 
+    #   - GloVe analyzes word relationships in a larger context
+    # So using both approaches combines local and global context, 
+    # potentially enhancing word embeddings.
+    X, Y = generate_cbow_data(words, tokenizer)
+
+    embedding_dim = 300
+    num_epochs = 10
+    glove_model = train_custom_word_embeddings(X, Y, tokenizer.word_index, embedding_dim, num_epochs)
+
+    word_embeddings_glove = get_word_embeddings(glove_model)
+
+    # check if a specific word ("king" in this case) is in the custom 
+    # GloVe model's vocabulary
+    word_to_check = "king"
+    if word_to_check in tokenizer.word_index:
+        word_index = tokenizer.word_index[word_to_check]
+        vector_glove = word_embeddings_glove[word_index]
+        print(f"Custom Glove vector for '{word_to_check}': {vector_glove}")
+    else:
+        print(f"'{word_to_check}' not found in the tokenizer.")
+
+    # Perform word similarity or analogy tasks
+    # For example we calculate how similar "king" and "queen" are in relation to "woman" 
+    # using custom GloVe embeddings
+    word1 = "king"
+    word2 = "queen"
+    word3 = "woman"
+
+    if word1 in tokenizer.word_index and word2 in tokenizer.word_index and word3 in tokenizer.word_index:
+        vector1 = word_embeddings_glove[tokenizer.word_index[word1]]
+        vector2 = word_embeddings_glove[tokenizer.word_index[word2]]
+        vector3 = word_embeddings_glove[tokenizer.word_index[word3]]
+
+        
+        # if the three words exist in the model's vocabulary 
+        # then it measures cosine similarity between word vectors
+        similarity = cosine_similarity([vector1 - vector3], [vector2 - vector3])
+        print(f"Similarity between '{word1}' and '{word2}' (analogous to '{word3}') using Custom GloVe: {similarity[0][0]}")
+    else:
+        print("Some words not found in the tokenizer for the similarity task.")
+
     input("Press Enter to continue...")

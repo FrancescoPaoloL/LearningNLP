@@ -57,7 +57,7 @@ def main():
   
     while True:
         print_menu(corpus, labels, matrices)
-        choice = input("Enter your choice (0-9): ")
+        choice = input("Enter your choice (0-10): ")
         print(f"You've chosen {choice}\n")
 
         if choice == "0":
@@ -88,6 +88,9 @@ def main():
             pass
         elif choice == "9":
             Gensim_example(vector_size=300, window=10, sg=1, min_count=10) 
+            pass
+        elif choice == "10":
+            Glove_example()
             pass
         else:
             print("Invalid choice. Please select a valid option.")
