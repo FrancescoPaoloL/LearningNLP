@@ -62,8 +62,21 @@ Feature engineering in NLP typically includes the following key steps:
         - <b><i>Skip-Gram</i></b>: it is a technique that helps us grasp the meanings of words and their relationships by analyzing the context in which they appear within a substantial body of text. In simpler terms, it enables us to capture the semantic connections between words. To illustrate, I've developed a script that performs tasks akin to the CBOW example. However, in this case, it extracts word embeddings to predict the target word based on its context words.
         - <b><i>Gensim</i></b>: it is a efficent implementation of the Word2Vec model. It's widely used for tasks like text document similarity, topic extraction, and word vector representations. To illustrate, I've developed a script that training a Gensim Word2Vec model on a text corpus, extracting word embeddings, and finding similar words to a specified target word, with adjustable model parameters.
         - <b><i>Glove</i></b>: it stands for 'Global Vectors' and is an unsupervised learning model that can be used to obtain dense word vectors, similar to Word2Vec. To illustrate how it works, I've created a script that processes text, generating word embeddings using both CBOW and GloVe. CBOW captures word meanings based on local context, while GloVe analyzes word relationships in a broader context. Finally, the script performs word similarity and analogy tasks, such as measuring the similarity between 'king,' 'queen,' and 'woman,' if these words are present in the model's vocabulary.
-
     In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
+
+## Text Processing
+Text processing in NLP involves preparing and analyzing text data with these key steps:
+    - Gather text data.
+    - Break text into smaller units (tokenization).
+    - Clean the text by removing noise.
+    - Remove common words (stopwords).
+    - Reduce words to their base form (lemmatization or stemming).
+    - Standardize text (normalization).
+    - Convert text to features for analysis.
+    - Perform NLP tasks like classification or sentiment analysis.
+    - Post-process results as needed.
+    - Evaluate model performance if using machine learning.
+In this case I've developed a simple example that demonstrates all the necessary steps for proper execution.
 
 TODO...
 
@@ -99,7 +112,7 @@ wip
 ```
 
 ## Test Coverage
-todo
+TODO
 
 
 ## License
