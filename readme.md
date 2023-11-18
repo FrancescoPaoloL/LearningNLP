@@ -45,7 +45,7 @@ It's designed to be more accurate and efficient than the original Porter Stemmer
 
 ## Feature enginering
 Feature engineering in NLP involves the process of transforming and creating meaningful features from raw text data to improve the performance of machine learning models. This is essential because many machine learning algorithms require numerical input data, while NLP tasks often involve working with unstructured text data. 
-Feature engineering in NLP typically includes the following key steps:
+Typically this process includes the following key steps:
 - <b>Text Preprocessing</b>: This step involves cleaning and preparing the raw text data.
 - <b>Feature Extraction</b>: In NLP, feature extraction involves converting text data into numerical features that can be used by machine learning algorithms. Common techniques for feature extraction include:</b>
     - <b><i>TRADITIONAL FEATURES ENGINEERING MODELS</i></b>
@@ -77,6 +77,15 @@ Text processing in NLP involves preparing and analyzing text data with these key
     - Post-process results as needed.
     - Evaluate model performance if using machine learning.
 In this case I've developed a simple example that demonstrates all the necessary steps for proper execution.
+
+## Text Summarization
+[wip]
+So because we're talking about SVD, we've made two scripts:
+    - one about eigenvalues and eigenvectors: this script calculates and combines a very simple matrix A and 
+    its eigenvectors into a single visual using Matplotlib. The matrix is presented as a heatmap, where colors indicate values. 
+    Eigenvectors are shown as arrows, with red representing the first eigenvector and blue the second in order to offer a clear 
+    and concise representation of both the matrix structure and the directions and magnitudes of its eigenvectors.
+    - the other about SVD calculation: (wip)
 
 TODO...
 
