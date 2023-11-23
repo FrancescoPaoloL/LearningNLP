@@ -86,7 +86,9 @@ So because we're talking about SVD, we've made two scripts:
     Eigenvectors are shown as arrows, with red representing the first eigenvector and blue the second in order to offer a clear 
     and concise representation of both the matrix structure and the directions and magnitudes of its eigenvectors.
     - the other about SVD calculation: (wip)
-
+    - Collocations: in simple terms, it's a phrase where the words tend to occur together more often than would be 
+expected by chance. In order to show you how it works I've made a script that identifies and displays collocations based on their frequency 
+and statistical significance using the Pointwise Mutual Information (PMI) metric.
 TODO...
 
 ### [WIP]
