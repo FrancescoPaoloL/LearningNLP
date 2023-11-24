@@ -7,7 +7,7 @@ from gensim.parsing import strip_punctuation, strip_numeric
 from gensim import corpora
 from gensim.models import LsiModel
 
-tgz_path = 'papers/nips12raw_str602.tgz'
+tgz_path = '../papers/nips12raw_str602.tgz'
 
 with open(tgz_path, 'rb') as file:
     compressed_file_content = BytesIO(file.read())
