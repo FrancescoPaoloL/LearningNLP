@@ -79,27 +79,25 @@ Text processing in NLP involves preparing and analyzing text data with these key
 In this case I've developed a simple example that demonstrates all the necessary steps for proper execution.
 
 ## Text Summarization
-Text Summarization in NLP automates the extraction of crucial information from a document, condensing it for brevity.
-In order to show how it works as introduction, we have created:
-    - a simple demonstration of how to calculate Eigenvalues and Eigenvectors, visualized as arrows. The first eigenvector 
-      is represented in red, and the second in blue.
-    - a script that performs extractive text summarization using the Singular Value Decomposition (SVD) technique. 
-      It tokenizes and preprocesses input text, computes the TF-IDF matrix, applies SVD to capture document structure, and 
-      selects key sentences based on the first component of the decomposition.
-To extract information, we can use the so-called "Keyphrase Extraction," specifically employing two major techniques:
-    - <b><i>Collocations</i></b>: in simple terms, it's a phrase where the words tend to occur together more often than would be expected 
-    by chance. To demonstrate how it works, I've created a script that identifies and displays collocations based on their frequency and statistical 
-    significance using the Pointwise Mutual Information (PMI) metric.
-    - <b><i>Score Weight</i></b>: The Weighted tag-based phrase extraction involves assigning weights to linguistic tags and then calculating a combined 
-    weight for phrases based on the tags of their constituent words. The general idea is to use weights associated with each tag to score and rank phrases. 
-    Please refer to the script for details.
-<b><i>Topic Modeling</i></b> is about extraction of themes/concepts in a corpora. There are three main methods to to that:
-    - <b><i>Latent Semantic Indexing</i></b>: this technique analyzes relationships between words in a set of documents to uncover hidden semantic structures. 
-    In order to show how it works I've made a script that creates an LSI (Latent Semantic Indexing) model, and prints the topics. You can get dataset from this site via wget https://cs.nyu.edu/~roweis/data/nips12raw_str602.tgz
-The output must be read in this way: let's take an example:<br> 
-(0, '0.528*"\x7f" + 0.352*"The" + ... + 0.110*"model"') <br>
-This means, in topic 0, the word "\x7f" has a weight of 0.528, "The" has a weight of 0.352, and so on. 
-The weights indicate the importance of each word in that topic.
+
+Text Summarization in NLP automates the extraction of crucial information from a document, condensing it for brevity. To demonstrate its functionality, we have created:
+
+- A simple demonstration illustrating how to calculate Eigenvalues and Eigenvectors, visualized as arrows. The first eigenvector is represented in red, and the second in blue.
+- A script for extractive text summarization using the Singular Value Decomposition (SVD) technique. This script tokenizes and preprocesses input text, computes the TF-IDF matrix, applies SVD to capture document structure, and selects key sentences based on the first component of the decomposition.
+
+To extract information, we employ "Keyphrase Extraction" with two major techniques:
+
+- **Collocations:** This involves identifying phrases where words tend to occur together more often than expected by chance. A script demonstrates this by identifying and displaying collocations based on their frequency and statistical significance using the Pointwise Mutual Information (PMI) metric.
+
+- **Score Weight:** Weighted tag-based phrase extraction assigns weights to linguistic tags and calculates a combined weight for phrases based on the tags of their constituent words. The general idea is to use weights associated with each tag to score and rank phrases. Refer to the script for details.
+
+**Topic Modeling** focuses on extracting themes/concepts from a corpora, utilizing two main methods:
+
+- **Latent Semantic Indexing (LSI):** This technique analyzes relationships between words in a set of documents to uncover hidden semantic structures. A script creates an LSI model and prints the topics. The output is interpreted as weights indicating the importance of each word in a topic. An example LSI representation of a new document is provided for interpretation.
+
+- **Latent Dirichlet Allocation (LDA):** This technique discovers topics and their distribution across documents. The script preprocesses research papers, builds an LDA model using Gensim, and prints the generated topics and LDA representation of a sample document. The information shared earlier regarding LSI output applies similarly to this script.
+
+
 
 ### [WIP]
 
@@ -129,6 +127,7 @@ scikit_learn==1.3.2
 scipy==1.5.4
 spacy==3.3.0
 stanza==1.5.0
+tabulate==0.8.10
 wip
 ```
 
