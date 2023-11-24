@@ -93,6 +93,13 @@ To extract information, we can use the so-called "Keyphrase Extraction," specifi
     - <b><i>Score Weight</i></b>: The Weighted tag-based phrase extraction involves assigning weights to linguistic tags and then calculating a combined 
     weight for phrases based on the tags of their constituent words. The general idea is to use weights associated with each tag to score and rank phrases. 
     Please refer to the script for details.
+<b><i>Topic Modeling</i></b> is about extraction of themes/concepts in a corpora. There are three main methods to to that:
+    - <b><i>Latent Semantic Indexing</i></b>: this technique analyzes relationships between words in a set of documents to uncover hidden semantic structures. 
+    In order to show how it works I've made a script that creates an LSI (Latent Semantic Indexing) model, and prints the topics. You can get dataset from this site via wget https://cs.nyu.edu/~roweis/data/nips12raw_str602.tgz
+The output must be read in this way: let's take an example:<br> 
+(0, '0.528*"\x7f" + 0.352*"The" + ... + 0.110*"model"') <br>
+This means, in topic 0, the word "\x7f" has a weight of 0.528, "The" has a weight of 0.352, and so on. 
+The weights indicate the importance of each word in that topic.
 
 ### [WIP]
 
