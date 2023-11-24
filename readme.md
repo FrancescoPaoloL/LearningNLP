@@ -79,17 +79,20 @@ Text processing in NLP involves preparing and analyzing text data with these key
 In this case I've developed a simple example that demonstrates all the necessary steps for proper execution.
 
 ## Text Summarization
-[wip]
-So because we're talking about SVD, we've made two scripts:
-    - one about eigenvalues and eigenvectors: this script calculates and combines a very simple matrix A and 
-    its eigenvectors into a single visual using Matplotlib. The matrix is presented as a heatmap, where colors indicate values. 
-    Eigenvectors are shown as arrows, with red representing the first eigenvector and blue the second in order to offer a clear 
-    and concise representation of both the matrix structure and the directions and magnitudes of its eigenvectors.
-    - the other about SVD calculation: (wip)
-    - Collocations: in simple terms, it's a phrase where the words tend to occur together more often than would be 
-expected by chance. In order to show you how it works I've made a script that identifies and displays collocations based on their frequency 
-and statistical significance using the Pointwise Mutual Information (PMI) metric.
-TODO...
+Text Summarization in NLP automates the extraction of crucial information from a document, condensing it for brevity.
+In order to show how it works as introduction, we have created:
+    - a simple demonstration of how to calculate Eigenvalues and Eigenvectors, visualized as arrows. The first eigenvector 
+      is represented in red, and the second in blue.
+    - a script that performs extractive text summarization using the Singular Value Decomposition (SVD) technique. 
+      It tokenizes and preprocesses input text, computes the TF-IDF matrix, applies SVD to capture document structure, and 
+      selects key sentences based on the first component of the decomposition.
+To extract information, we can use the so-called "Keyphrase Extraction," specifically employing two major techniques:
+    - <b><i>Collocations</i></b>: in simple terms, it's a phrase where the words tend to occur together more often than would be expected 
+    by chance. To demonstrate how it works, I've created a script that identifies and displays collocations based on their frequency and statistical 
+    significance using the Pointwise Mutual Information (PMI) metric.
+    - <b><i>Score Weight</i></b>: The Weighted tag-based phrase extraction involves assigning weights to linguistic tags and then calculating a combined 
+    weight for phrases based on the tags of their constituent words. The general idea is to use weights associated with each tag to score and rank phrases. 
+    Please refer to the script for details.
 
 ### [WIP]
 
