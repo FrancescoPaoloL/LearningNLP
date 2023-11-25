@@ -97,6 +97,9 @@ To extract information, we employ "Keyphrase Extraction" with two major techniqu
 
 - **Latent Dirichlet Allocation (LDA):** This technique discovers topics and their distribution across documents. The script preprocesses research papers, builds an LDA model using Gensim, and prints the generated topics and LDA representation of a sample document. The information shared earlier regarding LSI output applies similarly to this script.
 
+## Text Similarity
+Text similarity is a measure of how closely related or alike two pieces of text are in terms of content, structure, or meaning. To illustrate this, a simple example introduces various distance measurements in the context of text analysis, using only logic written from scratch, without any external libraries.
+todo...
 
 
 ### [WIP]
