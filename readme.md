@@ -124,6 +124,12 @@ For example we get:
 
 As you can see, Document 1 contains all the terms from the query ("quick," "brown," and "fox"), so it has the higher score. On the opposite, Document 3 has a BM25 score of 0.0 because it doesn't contain any of the terms from the query. 
 
+## Document Clustering
+Through this technique documents are grouped into clusters based on their content similarity; the objective is to discover inherent structures without predefined categories or labels.
+There are some method to do that. One popular is:<br>
+    - <b><i>K-means clustering</i></b>: it is a unsupervised machine learning algorithm used for partitioning a dataset into 'k' distinct subgroups or clusters. The algorithm iteratively assigns data points to clusters based on their similarity to the cluster centroids and updates the centroids to minimize the total within-cluster variance.
+In order to show you how it works I've made a script that uses this algorithm from scratch.
+
 ### [WIP]
 
 
