@@ -1,16 +1,12 @@
 from nltk.corpus import wordnet
 
-def get_synonyms(word):
-    synonyms = []
-    for syn in wordnet.synsets(word):
-        for lemma in syn.lemmas():
-            synonyms.append(lemma.name())
-    return list(set(synonyms))
+def get_related_words(word, relationship):
+    related_words = []
 
-def get_hypernyms(word):
-    hypernyms = []
     for syn in wordnet.synsets(word):
-        for hypernym in syn.hypernyms():
-            hypernyms.append(hypernym.name())
-    return list(set(hypernyms))
+        if relationship == 'synonyms':
+            related_words.extend(lemma.name() for lemma in syn.lemmas())
+        elif relationship == 'hypernyms':
+            related_words.extend(hypernym.name() for hypernym in syn.hypernyms())
+    return list(set(related_words))
 
