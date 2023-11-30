@@ -131,8 +131,9 @@ There are some method to do that. One popular is:<br>
     - <b><i>Affinity Propagation</i></b>: Affinity Propagation is a clustering algorithm designed to identify representative points within a dataset. Unlike traditional clustering methods where the number of clusters needs to be specified beforehand, Affinity Propagation determines both the number of clusters and the exemplars simultaneously. Simply put, the algorithm iteratively exchanges messages between data points to find a set of exemplars that maximize a combination of similarity and preference values. The data points are then assigned to the nearest exemplar, forming clusters. To illustrate how it works, I've created a script utilizing this algorithm, and the results are visualized for clarity.
 
 ## Semantic Analysis
-Semantic analysis involves understanding the meaning of words, sentences, or texts. To do that you can use WordNet that is a lexical database of English words, organizing them into sets of synonyms and showing relationships between words. To show how it works I've mande a very simple use case of WordNet through NLTK: it retrieves and prints synonyms and hypernyms for a specified word.
-
+Semantic analysis helps us understand the meaning of words, sentences, and texts. We can use a tool called WordNet to organize English words into groups of similar meanings called Synsets. It shows how words are connected.
+I've created a simple example using WordNet through NLTK. It finds and prints words with similar meanings (synonyms) and more general words (hypernyms) for a chosen word.
+In simpler terms, a Synset is like a category for words that are related in meaning. To make it clearer, I've made a script that takes a word, like "bat," and shows all the possible categories it could belong to using WordNet.
 
 ### [WIP]
 
