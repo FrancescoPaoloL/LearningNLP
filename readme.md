@@ -152,7 +152,7 @@ that means: the word "great" is present in the lexicon with a positive sentiment
 - <b><i>Pattern Lexicon:</i></b> Analyzes specific word patterns to discern emotions in textual content. So the example code uses the pattern.en library to perform sentiment analysis analyzing sentiment to extract polarity and subjectivity scores. We remind you that in sentiment analysis:
     - Polarity: indicates the emotional tone (positive, negative, or neutral) of a text.
     - Subjectivity: measures how subjective or objective the text is (opinionated vs. factual).
-- <b><i>SentiWordNet Lexicon:</i></b> A list assigning scores to words, facilitating the nuanced understanding of emotions in text.
+- <b><i>SentiWordNet Lexicon:</i></b> A list assigning scores to words, facilitating the nuanced understanding of emotions in text. The example calculates sentiment scores for a given sentence assigning sentiment scores based on SentiWordNet's sentiment synsets.
 - <b><i>TextBlob Lexicon:</i></b> A tool that examines words to determine the overall positive or negative tone of text.
 - <b><i>VADER Lexicon:</i></b> A tool specialized in comprehending sentiments in text, particularly on social media platforms.
 ### 
