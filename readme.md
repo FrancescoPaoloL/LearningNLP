@@ -153,8 +153,8 @@ that means: the word "great" is present in the lexicon with a positive sentiment
     - Polarity: indicates the emotional tone (positive, negative, or neutral) of a text.
     - Subjectivity: measures how subjective or objective the text is (opinionated vs. factual).
 - <b><i>SentiWordNet Lexicon:</i></b> A list assigning scores to words, facilitating the nuanced understanding of emotions in text. The example calculates sentiment scores for a given sentence assigning sentiment scores based on SentiWordNet's sentiment synsets.
-- <b><i>TextBlob Lexicon:</i></b> A tool that examines words to determine the overall positive or negative tone of text.
-- <b><i>VADER Lexicon:</i></b> A tool specialized in comprehending sentiments in text, particularly on social media platforms.
+- <b><i>TextBlob Lexicon:</i></b> A tool that examines words to determine the overall positive or negative tone of text. The example simply uses this tool.
+- <b><i>VADER Lexicon:</i></b> A tool specialized in comprehending sentiments in text, particularly on social media platforms. The example simply uses this tool.
 ### 
 
 ## Languages and Tools
@@ -176,6 +176,7 @@ matplotlib==2.1.1
 nltk==3.6.3
 numpy==1.13.3
 pandas==1.1.5
+Pattern==3.6
 Pillow==10.1.0
 PyYAML==6.0.1
 scikit_learn==1.3.2
@@ -183,7 +184,8 @@ scipy==1.5.4
 spacy==3.3.0
 stanza==1.5.0
 tabulate==0.8.10
-wip
+textblob==0.17.1
+vaderSentiment==3.3.2
 ```
 
 ## Test Coverage
