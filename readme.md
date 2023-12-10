@@ -1,4 +1,5 @@
 # Learning NLP
+The topics of this repository have been taken from the excellent book 'Text Analytics with Python' by Dipanjan Sarkar although the examples and code are mostly completely different.
 
 ## Shallow parsing
 Shallow parsing, also known as chunking, is a technique in natural language processing to identify and group specific phrases (like noun phrases or verb phrases) within a sentence.
