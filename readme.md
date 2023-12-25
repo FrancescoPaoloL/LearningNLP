@@ -170,21 +170,21 @@ that means: the word "great" is present in the lexicon with a positive sentiment
 
 ## Requirements
 ```
-CairoSVG==2.5.2
-gensim==4.2.0
-keras==2.6.0
-matplotlib==2.1.1
-nltk==3.6.3
-numpy==1.13.3
-pandas==1.1.5
+CairoSVG==2.7.1
+gensim==4.3.2
+keras==3.0.2
+matplotlib==3.6.3
+nltk==3.8
+numpy==1.24.2
+pandas==2.1.4
 Pattern==3.6
 Pillow==10.1.0
 PyYAML==6.0.1
 scikit_learn==1.3.2
-scipy==1.5.4
-spacy==3.3.0
-stanza==1.5.0
-tabulate==0.8.10
+scipy==1.11.4
+spacy==3.7.2
+stanza==1.7.0
+tabulate==0.9.0
 textblob==0.17.1
 vaderSentiment==3.3.2
 ```
