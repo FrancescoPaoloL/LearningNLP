@@ -6,6 +6,8 @@ def analyze_sentiment(text):
 
 hardcoded_text = "I love using Python for programming. It's such a powerful and versatile language!"
 
+polarity, subjectivity = analyze_sentiment(hardcoded_text)
+
 print(f"Sentiment Analysis Results:")
 print(f"Polarity: {polarity}")
 print(f"Subjectivity: {subjectivity}")
