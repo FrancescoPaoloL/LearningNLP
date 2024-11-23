@@ -1,19 +1,44 @@
 # Learning NLP
 The topics of this repository have been taken from the excellent book 'Text Analytics with Python' by Dipanjan Sarkar although the examples and code are mostly completely different.
 
-## Shallow parsing
+## Index
+1. **Syntax Analysis**
+   - [Shallow Parsing](#shallow-parsing)
+   - [Dependency Grammar](#dependency-grammar)
+   - [Constituency Grammar](#constituency-grammar)
+2. **Text Preprocessing**
+   - [Text Wrangling](#text-wrangling)
+     - [Stemming](#stemming)
+   - [Text Corpora](#text-corpora-using)
+3. **Feature Engineering**
+   - [Feature Engineering](#feature-enginering)
+4. **Core NLP Tasks**
+   - [Text Processing](#text-processing)
+   - [Text Summarization](#text-summarization)
+   - [Text Similarity](#text-similarity)
+5. **Information Retrieval**
+   - [Okapi BM25 Ranking Formula](#okapi-bm25-ranking-formula)
+6. **Unsupervised Learning**
+   - [Document Clustering](#document-clustering)
+7. **Advanced Applications**
+   - [Semantic Analysis](#semantic-analysis)
+   - [Sentiment Analysis](#sentiment-analysis)
+
+## Syntax Analysis
+### Shallow parsing
 Shallow parsing, also known as chunking, is a technique in natural language processing to identify and group specific phrases (like noun phrases or verb phrases) within a sentence.
 In order to show how it works, I've made a script that takes an English sentence as input, performs shallow parsing using the NLTK library, and then displays the parsed tree to show how different parts of the sentence are grouped together based on the specified grammar rules in the configuration file.
 
-## Dependency Grammar
+### Dependency Grammar
 Dependency grammar is a linguistic method that emphasizes the connections between words in a sentence, showing how each word relates to others by depicting these relationships in a tree-like structure. It helps us grasp how words work together to convey meaning within a sentence.
 In order to show how it works, I've made a script that takes an English sentence as input, loads a language model, creates a visual representation of how words in the sentence relate to each other (the dependency tree), and displays this tree as an image.
 
-## Costituency Grammar
+### Costituency Grammar
 Constituency grammar is a linguistic approach that helps us understand how sentences are structured by identifying the different parts and phrases that make them up, allowing for a deeper analysis of their organization and meaning.
 In order to show how it works, I've made a script that takes an English sentence as input, processes it with NLP techniques such as tokenization, POS tagging, and constituency parsing using the stanza library, and then displays the syntactic structure of the input sentence using constituency parsing.
 
-## Text Corpora using
+## [Text Preprocessing](#index)
+### Text Corpora using
 This Python project demonstrates a very simple text corpus analysis using the Natural Language Toolkit (NLTK) library. To achieve this, we've implemented basic functionalities on downloading essential NLTK resources, extracting the first 20 words from Blake's poems in the Gutenberg corpus, tokenizing the text, performing Part-of-Speech (POS) tagging, and conducting named-entity chunking.
 Specifically, we rely on the following NLTK components:
 
@@ -22,7 +47,7 @@ Specifically, we rely on the following NLTK components:
 - <b>Corpora/words</b>: In NLTK, this refers to a collection of words in the English language.
 - <b>Pos_tag</b>: This NLTK tool is used to automatically tag words in a text with their respective parts of speech.
 
-## Text Wrangling
+## [Text Wrangling](#index)
 Text wrangling is the process of cleaning your data to make it readable by your program. To demonstrate how it works, I have created a script that demonstrates, in a simple manner, how to fix spelling errors in a given text. It accomplishes this by generating potential corrections for each misspelled word and selecting the most probable correction based on word frequencies. The code then tokenizes the input text into words, corrects each word, and ultimately displays the corrected text.
 
 ### Stemming
@@ -44,7 +69,8 @@ This algorithm The Porter is available in the Natural Language Toolkit (NLTK),
 Like the Porter Stemmer, the Snowball Stemmer is used to reduce words to their base or root form, particularly in the English language. 
 It's designed to be more accurate and efficient than the original Porter Stemmer while still being relatively simple and effective.
 
-## Feature enginering
+
+## [Feature enginering](#index)
 Feature engineering in NLP involves the process of transforming and creating meaningful features from raw text data to improve the performance of machine learning models. This is essential because many machine learning algorithms require numerical input data, while NLP tasks often involve working with unstructured text data. 
 Typically this process includes the following key steps:
 - <b>Text Preprocessing</b>: This step involves cleaning and preparing the raw text data.
@@ -65,7 +91,9 @@ Typically this process includes the following key steps:
         - <b><i>Glove</i></b>: it stands for 'Global Vectors' and is an unsupervised learning model that can be used to obtain dense word vectors, similar to Word2Vec. To illustrate how it works, I've created a script that processes text, generating word embeddings using both CBOW and GloVe. CBOW captures word meanings based on local context, while GloVe analyzes word relationships in a broader context. Finally, the script performs word similarity and analogy tasks, such as measuring the similarity between 'king,' 'queen,' and 'woman,' if these words are present in the model's vocabulary.
     In the 'FeatureEngineering' directory, you can find simple examples of how to use these techniques.
 
-## Text Processing
+
+## [Core NLP Tasks](#index)
+### Text Processing
 Text processing in NLP involves preparing and analyzing text data with these key steps:
     - Gather text data.
     - Break text into smaller units (tokenization).
@@ -79,8 +107,7 @@ Text processing in NLP involves preparing and analyzing text data with these key
     - Evaluate model performance if using machine learning.
 In this case I've developed a simple example that demonstrates all the necessary steps for proper execution.
 
-## Text Summarization
-
+### Text Summarization
 Text Summarization in NLP automates the extraction of crucial information from a document, condensing it for brevity. To demonstrate its functionality, we have created:
 
 - A simple demonstration illustrating how to calculate Eigenvalues and Eigenvectors, visualized as arrows. The first eigenvector is represented in red, and the second in blue.
@@ -98,13 +125,14 @@ To extract information, we employ "Keyphrase Extraction" with two major techniqu
 
 - **Latent Dirichlet Allocation (LDA):** This technique discovers topics and their distribution across documents. The script preprocesses research papers, builds an LDA model using Gensim, and prints the generated topics and LDA representation of a sample document. The information shared earlier regarding LSI output applies similarly to this script.
 
-## Text Similarity
+### Text Similarity
 Text similarity is a measure of how closely related or alike two pieces of text are in terms of content, structure, or meaning. To illustrate this, a simple example introduces various distance measurements in the context of text analysis, using only logic written from scratch, without any external libraries.
 Then I've made a script which demonstrate how Okapi BM25 (BM is an abbreviation of best matching) works.
 First of all, it is a ranking function used to rank a collection of documents based on their relevance to a given query. 
 
-## Okapi BM25 Ranking Formula
 
+## [Information Retrieval](#index)
+### Okapi BM25 Ranking Formula
 The Okapi BM25 ranking formula is used to score the relevance of a document to a given search query. It is commonly employed in information retrieval systems.
 It is defined as:
 
@@ -125,13 +153,15 @@ For example we get:
 
 As you can see, Document 1 contains all the terms from the query ("quick," "brown," and "fox"), so it has the higher score. On the opposite, Document 3 has a BM25 score of 0.0 because it doesn't contain any of the terms from the query. 
 
-## Document Clustering
+## [Unsupervised Learning](#index)
+### Document Clustering
 Through this technique documents are grouped into clusters based on their content similarity; the objective is to discover inherent structures without predefined categories or labels.
 There are some method to do that. One popular is:<br>
     - <b><i>K-means clustering</i></b>: it is a unsupervised machine learning algorithm used for partitioning a dataset into 'k' distinct subgroups or clusters. The algorithm iteratively assigns data points to clusters based on their similarity to the cluster centroids and updates the centroids to minimize the total within-cluster variance. In order to show you how it works I've made a script that uses this algorithm from scratch.<br>
     - <b><i>Affinity Propagation</i></b>: Affinity Propagation is a clustering algorithm designed to identify representative points within a dataset. Unlike traditional clustering methods where the number of clusters needs to be specified beforehand, Affinity Propagation determines both the number of clusters and the exemplars simultaneously. Simply put, the algorithm iteratively exchanges messages between data points to find a set of exemplars that maximize a combination of similarity and preference values. The data points are then assigned to the nearest exemplar, forming clusters. To illustrate how it works, I've created a script utilizing this algorithm, and the results are visualized for clarity.
 
-## Semantic Analysis
+## [Advanced Applications](#index)
+### Semantic Analysis
 Semantic analysis helps us understand the meaning of words, sentences, and texts. We can use a tool called WordNet to organize English words into groups of similar meanings called Synsets. It shows how words are connected.
 There are various ways to represent semantic associated with statements and propositions; the main are:
 - <b><i>Lexical Semantic Relations</i></b>: it's about understanding how words are connected in meaning or how they relate to each other. So I've made a script that extracts synonyms from WordNet, and displaying the synonyms if present.
@@ -142,7 +172,7 @@ There are various ways to represent semantic associated with statements and prop
 - <b><i>WordNet Synsets</i></b>: it organizes words into sets (synsets) based on their meanings and relationships; for example, it groups words like "car" and "automobile" into a synset because they have a similar meaning. To show how it works I've created a simple example using WordNet through NLTK. It finds and prints words with similar meanings (synonyms) and more general words (hypernyms) for a chosen word. In simpler terms, a Synset is like a category for words that are related in meaning. To make it clearer, I've made a script that takes a word, like "bat," and shows all the possible categories it could belong to using WordNet.
 - <b><i>Word Sense Disambiguation</i></b>: it resolves ambiguity when a word has multiple meanings by determining the correct sense in a particular context; a classical example can be figuring out whether "bank" refers to a financial institution or the side of a river in a sentence.
 
-## Sentiment Analysis
+### Sentiment Analysis
 Simply put, Sentiment Analysis is the task of identifying the emotional tone or 'sentiment' conveyed in a piece of text, whether it is positive, negative, or neutral. This process can involve Supervised Learning-based models that learn from labeled data, while unsupervised lexicon-based models (a lexicon is just a predefined dictionary) utilize predefined dictionaries for sentiment analysis. Lexicons such as AFINN, BingLiu, MPQA, Pattern, SentiWordNet, TextBlob, and VADER employ varied strategies to extract sentiment information from text. To illustrate, we've created an example for each of these. So let's take a look at these kinds of lexicons and their corresponding explanation scripts:
 - <b><i>AFINN Lexicon:</i></b> A sentiment analysis tool assigning scores to words for straightforward emotion assessment in text. The associated script is straightforward: input a text for analysis, and it returns the sentiment.
 - <b><i>BingLiu Lexicon:</i></b> A tool that assesses words in text to determine whether they convey happiness or sadness. The relative script using this lexicon and produce an output like this:
