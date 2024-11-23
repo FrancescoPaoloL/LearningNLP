@@ -128,6 +128,8 @@ ENV/
 env.bak/
 venv.bak/
 
+learning_nlp_env
+
 # Spyder project settings
 .spyderproject
 .spyproject
