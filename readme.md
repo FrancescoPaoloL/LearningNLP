@@ -219,10 +219,6 @@ textblob==0.17.1
 vaderSentiment==3.3.2
 ```
 
-## Test Coverage
-TODO
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
